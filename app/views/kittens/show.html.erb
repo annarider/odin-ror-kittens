@@ -4,4 +4,5 @@
 <p>I'm <%= @kitten.age %> years old.</p>
 <p>I'm <%= @kitten.cuteness %> cute.</p>
 <p>My softness is <%= @kitten.softness %> out of 10.</p>
-<%=  %>
+
+<%= link_to 'Edit', edit_kitten_path(@kitten) %>
