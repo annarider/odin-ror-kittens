@@ -6,3 +6,5 @@
 <p>My softness is <%= @kitten.softness %> out of 10.</p>
 
 <%= link_to 'Edit', edit_kitten_path(@kitten) %>
+
+<%= button_to 'Delete', kitten_path(@kitten), method: :delete, data: { confirm: 'Are you sure?' } %>
