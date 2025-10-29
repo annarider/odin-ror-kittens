@@ -15,8 +15,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.build(kitten_params)
 
     if @kitten.save
-      flash[:notice] = 'New kitten added! Welcome to the cute family ☀️'
-      redirect_to kittens_path
+      redirect_to kittens_path, notice: 'New kitten added! Welcome to the cute family ☀️'
     else
       flash.now[:alert] = 'Oops! Your kitten form has errors.'
       render :new, status: :unprocessable_entity
@@ -31,10 +30,9 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
 
     if @kitten.update(kitten_params)
-      flash[:success] = 'Kitty got an update! Even more purr-fect now.'
-      redirect_to @kitten
+      redirect_to @kitten, notice: 'Kitty got an update! Even more purr-fect now.'
     else
-      flash.now[:error] = 'Nice try but your form has problems'
+      flash.now[:alert] = 'Nice try but your form has problems'
       render :edit, status: :unprocessable_entity
     end
   end
@@ -43,8 +41,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
     @kitten.destroy
 
-    flash[:notice] = 'Bye bye kitty.'
-    redirect_to root_path, status: :see_other
+    redirect_to root_path, status: :see_other, notice: 'Bye bye kitty.'
   end
 
   private
