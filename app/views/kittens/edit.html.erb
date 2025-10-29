@@ -2,4 +2,6 @@
 
 <%= render 'form' %>
 
+<%= button_to 'Delete', kitten_path(@kitten), method: :delete, data: { confirm: 'Are you sure?' } %>
+
 <%= link_to 'Back', kittens_path %>
