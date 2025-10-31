@@ -1,11 +1,15 @@
 <h1>All about <%= @kitten.name %> </h1>
 
-<div data-controller="hello"></div>
-
-<p>I'm a <%= @kitten.name %>.</p>
-<p>I'm <%= @kitten.age %> years old.</p>
-<p>I'm <%= @kitten.cuteness %> cute.</p>
-<p>My softness is <%= @kitten.softness %> out of 10.</p>
+<%# Toggle Dropdown menu %>
+<div data-controller="toggle" data-toggle-hidden-class="hidden">
+  <button data-action="click->toggle#toggle">Hide Kitten</button>
+  <div data-toggle-target="toggleable" class="hidden">
+    <p>I'm a <%= @kitten.name %>.</p>
+    <p>I'm <%= @kitten.age %> years old.</p>
+    <p>I'm <%= @kitten.cuteness %> cute.</p>
+    <p>My softness is <%= @kitten.softness %> out of 10.</p>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_kitten_path(@kitten) %>
 
