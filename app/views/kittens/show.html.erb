@@ -2,7 +2,7 @@
 
 <%# Toggle Dropdown menu %>
 <div data-controller="toggle" data-toggle-hidden-class="hidden">
-  <button data-action="click->toggle#toggle">Hide Kitten</button>
+  <button data-action="click->toggle#toggle">Show/Hide Kitten</button>
   <div data-toggle-target="toggleable" class="hidden">
     <p>I'm a <%= @kitten.name %>.</p>
     <p>I'm <%= @kitten.age %> years old.</p>
