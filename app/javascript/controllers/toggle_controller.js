@@ -9,4 +9,11 @@ export default class extends Controller {
       element.classList.toggle(this.hiddenClass)
     })
   }
+
+  hide(event) {
+    event.currentTarget.classList.add(this.hiddenClass)
+    this.toggleableTargets.forEach(element => {
+      element.classList.remove(this.hiddenClass)
+    })
+  }
 }
