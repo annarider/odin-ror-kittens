@@ -16,6 +16,14 @@
 </div>
 
 <%# Checkbox highlighting %>
+<div data-controller="toggle" data-toggle-hidden-class="bg-yellow">
+  <div data-toggle-container>
+    <label>
+      <input type="checkbox" data-action="change->toggle#toggleHighlight">
+      I agree that <%= @kitten.name %> is so adorable!
+    </label>
+  </div>
+</div>
 
 <%# Click to hide and show another element %>
 <div data-controller="toggle" data-toggle-hidden-class="hidden">
