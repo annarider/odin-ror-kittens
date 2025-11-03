@@ -8,12 +8,16 @@
   </div>
 </div>
 
+<hr>
+
 <div>
   <p>I'm a <%= @kitten.name %>.</p>
   <p>I'm <%= @kitten.age %> years old.</p>
   <p>I'm <%= @kitten.cuteness %> cute.</p>
   <p>My softness is <%= @kitten.softness %> out of 10.</p>
 </div>
+
+<hr> 
 
 <%# Checkbox highlighting %>
 <div data-controller="toggle" data-toggle-highlight-class="bg-yellow">
@@ -25,6 +29,8 @@
   </div>
 </div>
 
+<hr>
+
 <%# Click to hide and show another element %>
 <div data-controller="toggle" data-toggle-hidden-class="hidden">
   <div data-action="click->toggle#hide" class="cursor-pointer">
@@ -34,4 +40,17 @@
     <%= link_to 'Edit', edit_kitten_path(@kitten) %>
     <%= button_to 'Delete', kitten_path(@kitten), method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
+</div>
+
+<hr>
+
+<%# Character counter %>
+<div data-controller="character-counter" data-character-counter-max-value="200" data-character-counter-warning-value="50">
+  <label>Send a message to <%= @kitten.name %>:</label>
+  <textarea 
+    data-character-counter-target="input"
+    data-action="input->character-counter#updateCounter"
+    rows="4"
+    placeholder="Send a message to this kitty"></textarea>
+  <div data-character-counter-target="counter"></div>
 </div>
