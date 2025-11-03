@@ -4,3 +4,12 @@
 .bg-yellow { 
   background-color: #fef08a; 
 }
+.text-gray {
+  color: #4b5563;
+}
+.text-red {
+  color: #dc2626;
+}
+.text-yellow {
+  color: #ca8a04;
+}
