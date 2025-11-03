@@ -1,6 +1,6 @@
 <h1>All about <%= @kitten.name %> </h1>
 
-<%# Toggle Dropdown menu %>
+<%# Toggle show & hide kitten "menu" %>
 <div data-controller="toggle" data-toggle-hidden-class="hidden">
   <button data-action="click->toggle#toggle">Show/Hide Kitten</button>
   <div data-toggle-target="toggleable" class="hidden">
@@ -15,6 +15,9 @@
   <p>My softness is <%= @kitten.softness %> out of 10.</p>
 </div>
 
+<%# Checkbox highlighting %>
+
+<%# Click to hide and show another element %>
 <div data-controller="toggle" data-toggle-hidden-class="hidden">
   <div data-action="click->toggle#hide" class="cursor-pointer">
     Click me to see kitten actions! 👆
