@@ -16,4 +16,11 @@ export default class extends Controller {
       element.classList.remove(this.hiddenClass)
     })
   }
+
+  toggleHighlight(event) {
+    const container = event.currentTarget.closest('[data-toggle-container]')
+    if (container) {
+      container.classList.toggle(this.highlightClass)
+    }
+  }
 }
