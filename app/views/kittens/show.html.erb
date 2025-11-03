@@ -15,6 +15,12 @@
   <p>My softness is <%= @kitten.softness %> out of 10.</p>
 </div>
 
-<%= link_to 'Edit', edit_kitten_path(@kitten) %>
-
-<%= button_to 'Delete', kitten_path(@kitten), method: :delete, data: { confirm: 'Are you sure?' } %>
+<div data-controller="toggle" data-toggle-hidden-class="hidden">
+  <div data-action="click->toggle#hide" class="cursor-pointer">
+    Click me to see kitten actions! 👆
+  </div>
+  <div data-toggle-target="toggleable" class="hidden">
+    <%= link_to 'Edit', edit_kitten_path(@kitten) %>
+    <%= button_to 'Delete', kitten_path(@kitten), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
